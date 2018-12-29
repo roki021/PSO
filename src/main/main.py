@@ -1,7 +1,7 @@
 '''
 Created on Dec 29, 2018
 
-@author: Vlada
+@author: Vlada hehe
 '''
 
 if __name__ == '__main__':
