@@ -5,10 +5,10 @@ from time import time
 
 if __name__ == '__main__':
     opt = dict(options)
-    opt['particle_num'] = 30
+    opt['particle_num'] = 100
     opt['max_it'] = 100
     
-    f = open("log1.txt", "w")
+    f = open("log2.txt", "w")
     num_exec = 5
     time_diff_list = [0] * num_exec
     val_list = [0] * num_exec
