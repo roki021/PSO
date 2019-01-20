@@ -1,5 +1,6 @@
 Particle number: 30
 Max iteration: 100
+Bounds: (-10, 10)
 
 Best position = [
 	-3.494123949357377

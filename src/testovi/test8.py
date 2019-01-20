@@ -1,15 +1,16 @@
-from ann_criterion import optimality_criterion
-from PSO import PSO, options
+from testovi.ann_criterion import optimality_criterion
+from testovi.PSO import PSO, options
 from time import time
     
 
 if __name__ == '__main__':
     opt = dict(options)
-    opt['particle_num'] = 2000
-    opt['max_it'] = 50
+    opt['particle_num'] = 1000
+    opt['max_it'] = 1000
+    opt['bounds'] = (-100, 100)
     
-    f = open("log5.txt", "w")
-    num_exec = 2
+    f = open("log8.txt", "w")
+    num_exec = 1
     time_diff_list = [0] * num_exec
     val_list = [0] * num_exec
     pos_list = [None] * num_exec

@@ -66,7 +66,7 @@ def PSO(func, opt = options):
     swarm_best_pos = np.full((opt['dim'], ), 0) 
     
     for i in range(opt['particle_num']):
-        swarm.append(Particle(np.random.uniform(-10, 10, opt['dim'])))
+        swarm.append(Particle(np.random.uniform(opt['bounds'][0], opt['bounds'][1], opt['dim'])))
     
     i = 0
     while i < opt['max_it']:

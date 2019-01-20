@@ -25,7 +25,8 @@ if __name__ == '__main__':
     min_index = val_list.index(min(val_list))
   
     f.write("Particle number: " + str(opt['particle_num']) + "\n")
-    f.write("Max iteration: " + str(opt['max_it']) + "\n\n")
+    f.write("Max iteration: " + str(opt['max_it']) + "\n")
+    f.write("Bounds: " + str(opt['bounds']) + "\n\n")
     f.write("Best position = [\n")
     for dim in pos_list[min_index]:
         f.write("\t" + str(dim) + "\n")
