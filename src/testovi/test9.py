@@ -1,5 +1,6 @@
-from testovi.ann_criterion import optimality_criterion
-from testovi.PSO import PSO, options
+from optimization.ann_criterion import optimality_criterion
+from optimization.PSO import PSO, options
+from time import time
     
 
 if __name__ == '__main__':

@@ -90,3 +90,4 @@ def interpolation(start, end, max_it, min_it, curr_it):
         Interpolira izmenu za prosledjeni faktor
     """
     return start + ((end - start) / (max_it - min_it)) * (max_it - curr_it)
+
