@@ -1,5 +1,5 @@
-from optimization.ann_criterion import optimality_criterion
-from optimization.PSO import PSO, options
+from ann_criterion import optimality_criterion
+from PSO import PSO, options
 from time import time
     
 
