@@ -1,15 +1,15 @@
-from testovi.ann_criterion import optimality_criterion
-from testovi.PSO import PSO, options
+from optimization.ann_criterion import optimality_criterion
+from optimization.PSO import PSO, options
 from time import time
     
 
 if __name__ == '__main__':
     opt = dict(options)
-    opt['particle_num'] = 100
-    opt['max_it'] = 3000
+    opt['particle_num'] = 1000
+    opt['max_it'] = 800
     opt['bounds'] = (-5, 0)
     
-    num_exec = 5
+    num_exec = 1
     time_diff_list = [0] * num_exec
     val_list = [0] * num_exec
     pos_list = [None] * num_exec
@@ -24,7 +24,7 @@ if __name__ == '__main__':
         
     min_index = val_list.index(min(val_list))
   
-    f = open("log13.txt", "w")
+    f = open("t2.txt", "w")
     f.write("Particle number: " + str(opt['particle_num']) + "\n")
     f.write("Max iteration: " + str(opt['max_it']) + "\n")
     f.write("Bounds: " + str(opt['bounds']) + "\n\n")

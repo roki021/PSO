@@ -24,7 +24,7 @@ class Particle(object):
     def __init__(self, w):
         self.position = np.copy(w)
         self.velocity = np.random.uniform(-1, 1, len(w))
-        self.peronal_best = self.position
+        self.personal_best = np.copy(self.position)
         self.feval = None
         self.feval_best = None
         
@@ -36,7 +36,7 @@ class Particle(object):
         
         if self.feval_best is None or self.feval < self.feval_best:
             self.feval_best = self.feval
-            self.peronal_best = np.copy(self.position)
+            self.personal_best = np.copy(self.position)
             
     def update_data(self, swarm_best_pos, iteration, opt):
         """
@@ -49,11 +49,11 @@ class Particle(object):
         rp = np.random.random()
         rg = np.random.random()
         
-        cognitive = np.multiply(cp * rp, np.subtract(self.peronal_best, self.position))
+        cognitive = np.multiply(cp * rp, np.subtract(self.personal_best, self.position))
         social = np.multiply(cg * rg, np.subtract(swarm_best_pos, self.position))
         self.velocity = np.add(np.multiply(w, self.velocity), np.add(cognitive, social))
         
-        self.peronal_best = np.add(self.position, self.velocity)
+        self.position = np.add(self.position, self.velocity)
     
     
 def PSO(func, opt = options):
@@ -75,12 +75,13 @@ def PSO(func, opt = options):
             
             if swarm_best is None or swarm_best > particle.feval_best:
                 swarm_best = particle.feval_best
-                swarm_best_pos = particle.peronal_best[:]
+                swarm_best_pos = particle.personal_best[:]
             
         for particle in swarm:
             particle.update_data(swarm_best_pos, i, opt)
             
         i += 1
+        print(i, swarm_best)
             
     return np.array(swarm_best_pos), swarm_best
         
